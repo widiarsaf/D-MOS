@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 05, 2021 at 03:36 AM
+-- Generation Time: Nov 14, 2021 at 01:06 PM
 -- Server version: 10.4.6-MariaDB
 -- PHP Version: 7.3.9
 
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `db_ahlan_eatery`
+-- Database: `db_d-mos`
 --
 
 -- --------------------------------------------------------
@@ -119,6 +119,13 @@ CREATE TABLE `order` (
   `harga` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `order`
+--
+
+INSERT INTO `order` (`id`, `no_meja`, `nama`, `tanggal`, `status_order`, `harga`) VALUES
+(342, 2, 'asd', '2021-11-08', 'diproses', 350000);
+
 -- --------------------------------------------------------
 
 --
@@ -189,7 +196,9 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `level`, `remember_token`, `created_at`, `updated_at`) VALUES
 (1, 'admin', 'admin@admin.com', NULL, '$2y$10$algjImFnTaRIXaCj3382NeHQp5gX7Jl2toVBPBBKz3fnDdiTkZgbC', 1, NULL, '2021-09-16 06:20:41', '2021-09-16 06:20:41'),
-(3, 'waiter', 'waiter@admin.com', NULL, '$2y$10$algjImFnTaRIXaCj3382NeHQp5gX7Jl2toVBPBBKz3fnDdiTkZgbC', 2, NULL, '2021-09-16 06:20:41', '2021-09-16 06:20:41');
+(3, 'waiter', 'waiter@admin.com', NULL, '$2y$10$algjImFnTaRIXaCj3382NeHQp5gX7Jl2toVBPBBKz3fnDdiTkZgbC', 4, NULL, '2021-09-16 06:20:41', '2021-09-16 06:20:41'),
+(5, 'cashier', 'cashier@admin.com', NULL, '$2y$10$algjImFnTaRIXaCj3382NeHQp5gX7Jl2toVBPBBKz3fnDdiTkZgbC', 2, NULL, '2021-09-16 06:20:41', '2021-09-16 06:20:41'),
+(6, 'chef', 'chef@admin.com', NULL, '$2y$10$algjImFnTaRIXaCj3382NeHQp5gX7Jl2toVBPBBKz3fnDdiTkZgbC', 3, NULL, '2021-09-16 06:20:41', '2021-09-16 06:20:41');
 
 --
 -- Indexes for dumped tables
@@ -301,7 +310,7 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `order`
 --
 ALTER TABLE `order`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=343;
 
 --
 -- AUTO_INCREMENT for table `order_detail`
@@ -319,7 +328,7 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- Constraints for dumped tables
