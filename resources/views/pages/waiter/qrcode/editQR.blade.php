@@ -16,8 +16,9 @@
 </div>
 @endif
 <h4 class="mb-3">Masukkan QR code baru</h4>
-<form method="post" action="{{ route('qrcode.store') }}" id="myForm" enctype="multipart/form-data">
+<form method="post" action="{{ route('qrcode.update', $qrcode->id) }}" id="myForm" enctype="multipart/form-data">
 	@csrf
+	@method('PUT')
 	<div class="form-group">
 		<label for="code_meja">Code Meja</label>
 		<input type="text" name="code_meja" class="form-control" id="code_meja" value = "{{$qrcode->code_meja}}">
