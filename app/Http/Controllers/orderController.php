@@ -25,7 +25,7 @@ class orderController extends Controller
         $no_table = $request->no_meja;
         // dd($no_table);
         do{
-            $no_pesanan = random_int(100000, 999999);
+            $no_pesanan = "D-MOS" . "-" . $this->random_strings(3);
         }while(order::where('id',$no_pesanan)->get()->count() > 0);
         return view('pages.customer.passtable', compact('no_pesanan','no_table'));
 
@@ -148,3 +148,5 @@ class orderController extends Controller
         //
     }
 }
+
+

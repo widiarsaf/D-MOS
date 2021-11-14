@@ -14,10 +14,13 @@ class CreateMasakanTable extends Migration
     public function up()
     {
         Schema::create('masakan', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('id');
             $table->string('nama_masakan', 100);
             $table->integer('harga');
             $table->string('status', 50)->default('tersedia');
+            $table->string('gambar', 255)->default('images/masakanDefault.jpg');
+            $table->unsignedBigInteger('id_jenis')->nullable();
+            $table->foreign('id_jenis')->references('id')->on('jenis_masakan')->onDelete('set null')->onUpdate('cascade');
         });
     }
 

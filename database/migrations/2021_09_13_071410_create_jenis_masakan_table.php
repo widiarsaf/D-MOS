@@ -14,7 +14,7 @@ class CreateJenisMasakanTable extends Migration
     public function up()
     {
         Schema::create('jenis_masakan', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('id');
             $table->string('nama_jenis', 100);
         });
     }

@@ -15,9 +15,13 @@ class CreateOrderDetailTable extends Migration
     {
         Schema::create('order_detail', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('id_order');
-            $table->bigInteger('id_masakan');
             $table->string('keterangan', 100);
+            $table->integer('harga');
+            $table->integer('qty');
+            $table->unsignedBigInteger('id_order')->nullable();
+            $table->foreign('id_order')->references('id')->on('order')->onDelete('set null')->onUpdate('cascade');
+            $table->unsignedBigInteger('id_masakan')->nullable();
+            $table->foreign('id_masakan')->references('id')->on('masakan')->onDelete('set null')->onUpdate('cascade');
         });
     }
 

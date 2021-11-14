@@ -38,7 +38,7 @@
 			<td>{{$ord->nama}}</td>
 			<td>{{$ord->tanggal}}</td>
 			<td>
-			@if($ord->status_order == "dipesan" && Auth::User()->)
+			@if($ord->status_order == "dipesan")
 			<a href="{{url('updateStatus/dibayar/'.$ord->id)}}" class = "btn btn-primary">Dibayar</a>
 			@elseif($ord->status_order == "dibayar")br
 			<a href="{{url('updateStatus/dimasak/'.$ord->id)}}" class = "btn btn-primary">Dibayar</a>

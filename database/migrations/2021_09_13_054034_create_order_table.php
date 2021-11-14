@@ -14,7 +14,7 @@ class CreateOrderTable extends Migration
     public function up()
     {
         Schema::create('order', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('id');
             $table->integer('no_meja');
             $table->string('nama', 100);
             $table->date('tanggal');
