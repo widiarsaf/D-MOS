@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\order;
 use App\Models\order_detail;
 use App\Models\masakan;
+use App\Models\QRcode;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 
@@ -32,13 +33,48 @@ class orderController extends Controller
         
     }
 
+    public function checkIfAva()
+    {
+        $penyewaanList = Penyewaan::all();
+        $no_nota = "GM" . "-" . $this->random_strings(3);
+        $isAva = True;
+        for ($i = 0; $i < count($penyewaanList); $i++) {
+            if ($penyewaanList[$i]->no_nota === $no_nota) {
+                $isAva = False;
+            } else {
+                $isAva = True;
+            }
+        }
+        if ($isAva) {
+            return $no_nota;
+        } else {
+            $this->checkIfAva();
+        }
+        return $no_nota;
+    }
+
     public function cekDataPesanan($no)
     {
         $no_table = $no;
-        do{
-            $no_pesanan = random_int(100000, 999999);
-        }while(order::where('id',$no_pesanan)->get()->count() > 0);
-        return view('pages.customer.passtable', compact('no_pesanan','no_table'));   
+
+        $qrcodeList = QRcode::all();
+        for ($i = 0; $i < count($qrcodeList); $i++) {
+            if ($qrcodeList[$i]->code_meja===$no_table) {
+                 do{
+                    $no_pesanan = random_int(100000, 999999);
+                }while(order::where('id',$no_pesanan)->get()->count() > 0);
+                return view('pages.customer.passtable', compact('no_pesanan','no_table'));   
+            } else {
+                return view('pages.customer.QRcodeNotFound');
+            }
+        }
+        
+
+
+
+
+
+       
     }
 
 
@@ -108,7 +144,7 @@ class orderController extends Controller
             'nama' => $nama_pemesan,
             'tanggal'=> Carbon::now(),
             'harga'=> $total,
-            'status_order' => 0,
+            'status_order' => 'dipesan',
         ]);
         foreach($pesanan as $row){
             // echo ($row['id']);

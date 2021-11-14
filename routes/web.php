@@ -3,13 +3,12 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\masakanController;
 use App\Http\Controllers\jenis_masakanController;
-use App\Http\Controllers\extraController;
-
 use App\Http\Controllers\waiterController;
 use App\Http\Controllers\mejaController;
 use App\Http\Controllers\statusController;
 use App\Http\Controllers\orderController;
 use App\Http\Controllers\orderWaiterController;
+use App\Http\Controllers\QRcodeController;
 use Illuminate\Http\Request;
 
 
@@ -46,6 +45,7 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('extra', extraController::class);
     Route::resource('waiter', waiterController::class);
     Route::resource('orderWaiter', orderWaiterController::class);
+    Route::resource('qrcode', QRcodeController::class);
     Route::get('/waiter/detailorder/{id}', [orderWaiterController::class, 'show']);
     Route::get('/waiter/konfirmasistatus/{id}/{code}', [orderWaiterController::class, 'konfirmasi']);
     Route::get('updateStatus/{id}', [orderWaiterController::class, 'updateStatus'])->name('updateStatus');

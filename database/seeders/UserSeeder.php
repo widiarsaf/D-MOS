@@ -31,7 +31,7 @@ class UserSeeder extends Seeder
                 'email' => 'waiter@gmail.com',
                 'email_verified_at' => NULL,
                 'password' => Hash::make('waiter123'),
-                'level' => 2,
+                'level' => 4,
             ],
             [
                  'id' => 3,
@@ -42,12 +42,12 @@ class UserSeeder extends Seeder
                 'level' => 3,
             ],
             [
-                 'id' => 4,
+                'id' => 4,
                 'name' => 'cashier',
                 'email' => 'cashier@gmail.com',
                 'email_verified_at' => NULL,
                 'password' => Hash::make('cashier123'),
-                'level' => 4,
+                'level' => 2,
             ],
             
            

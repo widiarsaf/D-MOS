@@ -22,7 +22,7 @@
 </style>
 <div class="row" style="height:500px;">
     
-    <div class="col-sm-6" height="100%" id="btnmenu" onclick="window.open('{{url("scan")}}', '_blank').focus()">
+    <div class="col-sm-6" height="100%" id="btnmenu" onclick="window.open('https://qrcodescan.in/', '_blank').focus()">
         <h1 class="ctbtn">Pesan Sekarang</h1>
     </div>
     <div class="col-sm-6" height="100%" id="btnmenu" onclick="window.open('{{url("login")}}', '_blank').focus()">

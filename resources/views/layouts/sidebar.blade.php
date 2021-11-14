@@ -57,7 +57,15 @@
 							<span class="pcoded-mcaret"></span>
 						</a>
 					</li> --}}
+					
 				</ul>
+				<li class="active">
+					<a href="{{route('qrcode.index')}}">
+						<span class="pcoded-micon"><i class="ti-clipboard"></i><b>D</b></span>
+						<span class="pcoded-mtext" data-i18n="nav.dash.main">QR Code</span>
+						<span class="pcoded-mcaret"></span>
+					</a>
+				</li>
 
 				@endif
 				<div class="pcoded-navigatio-lavel" data-i18n="nav.category.forms" class = "mt--6">Log Out</div>
