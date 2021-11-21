@@ -221,5 +221,24 @@ $('.show-cart').on("change",".item-count",function(event) {
 
 displayCart();
 
+function showMasakan() {
+	console.log('OK');
+	var selectMasakan=document.getElementById('selectMasakan');
+	console.log(selectMasakan.value);
+	if(selectMasakan.value === 'makanan' ) {
+		var minumanContainer=document.getElementById('minuman');
+		var makananContainer=document.getElementById('makanan');
+		makananContainer.style.display="";
+		minumanContainer.style.display="none";
+	}
+	else if(selectMasakan.value==='minuman') {
+		var minumanContainer=document.getElementById('minuman');
+		var makananContainer=document.getElementById('makanan');
+		makananContainer.style.display="none";s
+		minumanContainer.style.display="";
+	}
+}
+
+
 
 

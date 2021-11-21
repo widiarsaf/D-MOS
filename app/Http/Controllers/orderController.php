@@ -65,9 +65,14 @@ class orderController extends Controller
         $nama_pemesan = $request->get('nama_pemesan');
         
         $masakan = masakan::all();
+        $makanan = masakan::where('id_jenis', 1)->get();
+         $minuman = masakan::where('id_jenis', 2)->get();
+        $jenisMasakan= jenis_masakan::all();
+
 
         // dd($nama_pemesan, $no_table, $no_pesanan);
-        return view('pages.customer.order', compact('no_table','no_pesanan', 'nama_pemesan', 'masakan'));
+        return view('pages.customer.order', 
+        compact('no_table','no_pesanan', 'nama_pemesan', 'masakan', 'jenisMasakan', 'minuman', 'makanan'));
         
         
     }

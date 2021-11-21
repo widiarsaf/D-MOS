@@ -34,22 +34,20 @@
 	</nav>
 </div>
 <div class="d-flex align-items-center flex-column mb-4">
-<div class="d-flex align-items-end flex-column mb-3">
-            <form action="{{ route('order.index') }}" class="form-inline align-items-end" method="GET">
-                <p>Sort by:</p>
-                <select class="custom-select ml-3" name="sortBy">                
-                    <option value="1" >Makanan</option>
-                    <option value="2" >Minuman</option>
-                </select>
-                <button type="submit" class="btn btn-primary ml-3">Submit</button>
-            </form>
+<div class="d-flex align-items-end flex-column mb-3">   
+					<p>Sort by:</p>
+					<select class="custom-select ml-3" name="sortBy" id = "selectMasakan" onclick = "showMasakan()">   
+							<option value = "makanan">Makanan</option>
+							<option value = "minuman">Minuman</option>
+					</select>
+					{{-- <button type="submit" class="btn btn-primary ml-3">Submit</button> --}}
         </div>      
         </div>   
 	<!-- Main -->
 	<div class="container">
-		<div class= "row">
+		<div class= "row" id= "makanan" style="display: block">
 		
-			@foreach ($masakan as $item)
+			@foreach ($makanan as $item)
 			<div class="card" style="width: 18rem;">
 				<img class="card-img-top" src="{{asset('storage/'.$item->gambar)}}" alt="Card image cap">
 				<div class="card-body">
@@ -61,6 +59,22 @@
 			</div>
 			@endforeach
 			
+		</div>
+		<div class="row" id="minuman" style="display: none">
+		
+			@foreach ($minuman as $item)
+			<div class="card" style="width: 18rem;">
+				<img class="card-img-top" src="{{asset('storage/'.$item->gambar)}}" alt="Card image cap">
+				<div class="card-body">
+					<h5 class="card-title">{{$item->nama_masakan}}</h5>
+					<p class="card-text">{{$item->harga}} | {{$item->status}}</p>
+					<a href="#" data-name="{{$item->nama_masakan}}" data-id="{{$item->id}}" data-price="{{$item->harga}}"
+						class="add-to-cart btn btn-primary">Add to cart</a>
+		
+				</div>
+			</div>
+			@endforeach
+		
 		</div>
 
 		
@@ -96,12 +110,16 @@
 				</div>
 			</div>
 		</div>
-
+		<script>
+		
+		</script>
 		<script type="text/javascript" src="{{asset('assets/js/jquery/jquery.min.js')}}"></script>
 		<script type="text/javascript" src="{{asset('assets/js/jquery-ui/jquery-ui.min.js')}}"></script>
 		<script type="text/javascript" src="{{asset('assets/js/popper.js/popper.min.js')}}"></script>
 		<script type="text/javascript" src="{{asset('assets/js/bootstrap/js/bootstrap.min.js')}}"></script>
 		<script type="text/javascript" src="{{asset('assets/js/scriptCustomer.js')}}"></script>
+
+		
 
 </body>
 
