@@ -32,28 +32,38 @@
 			</div>
 		</div>
 	</nav>
-
-
+</div>
+<div class="d-flex align-items-center flex-column mb-4">
+<div class="d-flex align-items-end flex-column mb-3">
+            <form action="{{ route('order.index') }}" class="form-inline align-items-end" method="GET">
+                <p>Sort by:</p>
+                <select class="custom-select ml-3" name="sortBy">                
+                    <option value="1" >Makanan</option>
+                    <option value="2" >Minuman</option>
+                </select>
+                <button type="submit" class="btn btn-primary ml-3">Submit</button>
+            </form>
+        </div>      
+        </div>   
 	<!-- Main -->
 	<div class="container">
-		<div>
+		<div class= "row">
+		
 			@foreach ($masakan as $item)
-					<div class="card">
-						<div style="display: flex; gap: 30px">	
-							<div>
-								<img class="card-img-top" src="{{asset('storage/'.$item->gambar) }}" alt="Card image cap">
-							</div>
-							<div class = "pt-3">
-								<h5>{{$item->nama_masakan}}</h5>
-								<p class="card-text">Harga: Rp {{$item->harga}}</p>
-								<a href="#" data-name="{{$item->nama_masakan}}" data-id="{{$item->id}}" data-price="{{$item->harga}}" class="add-to-cart btn btn-primary">Add to cart</a>
-							</div>
-						</div>
-					</div>
+			<div class="card" style="width: 18rem;">
+				<img class="card-img-top" src="{{asset('storage/'.$item->gambar)}}" alt="Card image cap">
+				<div class="card-body">
+					<h5 class="card-title">{{$item->nama_masakan}}</h5>
+					<p class="card-text">{{$item->harga}} | {{$item->status}}</p> 
+					<a href="#" data-name="{{$item->nama_masakan}}" data-id="{{$item->id}}" data-price="{{$item->harga}}" class="add-to-cart btn btn-primary">Add to cart</a>
+
+				</div>
+			</div>
 			@endforeach
+			
 		</div>
 
-
+		
 		<!-- Modal -->
 		<div class="modal fade" id="cart" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
 			aria-hidden="true">

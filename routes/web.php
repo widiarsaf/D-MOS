@@ -27,6 +27,7 @@ Route::get('/pesan/meja/{id}', [App\Http\Controllers\orderController::class, 'ce
 Route::post('/send/nama', [App\Http\Controllers\orderController::class, 'dataPesanan'])->name('sendNama');
 Route::post('/order/list', [App\Http\Controllers\orderController::class, 'orderList'])->name('orderList');
 
+//Route::get('/send/nama/soryBy/{id}', [App\Http\Controllers\orderController::class, 'kategorijenis'])->name('sendNama');
 
 
 Route::any('cekorder', [App\Http\Controllers\orderController::class, 'cekorder']);

@@ -5,9 +5,11 @@ namespace App\Http\Controllers;
 use App\Models\order;
 use App\Models\order_detail;
 use App\Models\masakan;
+use App\Models\jenis_masakan;
 use App\Models\QRcode;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
+use DB;
 
 class orderController extends Controller
 {
@@ -15,10 +17,13 @@ class orderController extends Controller
     public function index(Request $request)
     {
         
-
+    }
+    public function kategorijenis(Request $request)
+    {
         
-
-
+        $masakan = DB::table('masakan')
+        ->where("id_jenis",$request->id_jenis);
+        return redirect('pages.customer.order', compact('masakan') );
     }
 
     public function pesanmeja(Request $request)
