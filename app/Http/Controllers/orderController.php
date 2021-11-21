@@ -16,9 +16,6 @@ class orderController extends Controller
     {
         
 
-        
-
-
     }
 
     public function pesanmeja(Request $request)
@@ -33,25 +30,6 @@ class orderController extends Controller
         
     }
 
-    public function checkIfAva()
-    {
-        $penyewaanList = Penyewaan::all();
-        $no_nota = "GM" . "-" . $this->random_strings(3);
-        $isAva = True;
-        for ($i = 0; $i < count($penyewaanList); $i++) {
-            if ($penyewaanList[$i]->no_nota === $no_nota) {
-                $isAva = False;
-            } else {
-                $isAva = True;
-            }
-        }
-        if ($isAva) {
-            return $no_nota;
-        } else {
-            $this->checkIfAva();
-        }
-        return $no_nota;
-    }
 
     public function cekDataPesanan($no)
     {
@@ -69,11 +47,6 @@ class orderController extends Controller
             }
         }
         
-
-
-
-
-
        
     }
 
