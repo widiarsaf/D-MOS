@@ -34,15 +34,14 @@
 	</nav>
 </div>
 <div class="d-flex align-items-center flex-column mb-4">
-<div class="d-flex align-items-end flex-column mb-3">   
-					<p>Sort by:</p>
-					<select class="custom-select ml-3" name="sortBy" id = "selectMasakan" onclick = "showMasakan()">   
-							<option value = "makanan">Makanan</option>
-							<option value = "minuman">Minuman</option>
-					</select>
-					{{-- <button type="submit" class="btn btn-primary ml-3">Submit</button> --}}
-        </div>      
-        </div>   
+	<div class="d-flex mb-4 align-items-center" style="justify-content: center;">
+		<p>Sort by:</p>
+		<select class="custom-select ml-3" name="sortBy" id = "selectMasakan" onclick = "showMasakan()"
+			style = "width : 300px; height: 40px; font-size: 15px;">   
+				<option value = "makanan">Makanan</option>
+				<option value = "minuman">Minuman</option>
+		</select>       
+	</div>
 	<!-- Main -->
 	<div class="container">
 		<div class= "row" id= "makanan" style="display: block">
@@ -76,6 +75,7 @@
 			@endforeach
 		
 		</div>
+	<div>
 
 		
 		<!-- Modal -->
@@ -110,6 +110,7 @@
 				</div>
 			</div>
 		</div>
+
 		<script>
 		
 		</script>
@@ -120,7 +121,8 @@
 		<script type="text/javascript" src="{{asset('assets/js/scriptCustomer.js')}}"></script>
 
 		
-
+</div>
+</div>
 </body>
 
 </html>
