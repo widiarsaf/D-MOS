@@ -123,7 +123,7 @@ class orderController extends Controller
             'nama' => $nama_pemesan,
             'tanggal'=> Carbon::now(),
             'harga'=> $total,
-            'status_order' => 'dipesan',
+            'status_order' => 'diproses',
         ]);
         foreach($pesanan as $row){
             // echo ($row['id']);

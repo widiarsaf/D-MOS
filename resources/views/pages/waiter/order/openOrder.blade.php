@@ -20,7 +20,8 @@
 	</div>
 	@endif
 	{{-- <button onClick="notif_me()"> tes </button> --}}
-	<table class="table table-bordered">
+	<table class="table table-bordered" id="openOrderTable">
+		<thead>
 		<tr>
 			<th>No Meja</th>
 			<th>No Pemesanan</th>
@@ -30,6 +31,8 @@
 			<th>Harga</th>
 			<th>Aksi</th>
 		</tr>
+		</thead>
+		<tbody>
 		@php $no = 1; @endphp
 		@foreach ($order as $ord)
 		<tr>
@@ -56,5 +59,6 @@
 			
 		</tr>
 		@endforeach
+		</tbody>
 	</table>
 @endsection

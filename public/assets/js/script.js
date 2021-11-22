@@ -90,7 +90,7 @@ $(document).ready(function() {
     $(function() {
         $('[data-toggle="tooltip"]').tooltip();
     });
-    $('.theme-loader').fadeOut('slow',function() {
+    $('.theme-loader').fadeOut('fast',function() {
         $(this).remove();
     });
 });
@@ -155,5 +155,15 @@ $(document).ready( function () {
 
 $(document).ready( function () {
     $('#waiterTable').DataTable();
+    console.log('OK');
+} );
+
+$(document).ready( function () {
+    $('#openOrderTable').DataTable();
+    console.log('OK');
+} );
+
+$(document).ready( function () {
+    $('#closeOrderTable').DataTable();
     console.log('OK');
 } );
