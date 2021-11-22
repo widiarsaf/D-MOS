@@ -137,3 +137,23 @@ var nav = $('.fixed-button');
          nav.removeClass('active');
      }
  });
+
+ $(document).ready( function () {
+    $('#menuTable').DataTable();
+    console.log('OK');
+} );
+
+$(document).ready( function () {
+    $('#menuJenisTable').DataTable();
+    console.log('OK');
+} );
+
+$(document).ready( function () {
+    $('#qrCodeTable').DataTable();
+    console.log('OK');
+} );
+
+$(document).ready( function () {
+    $('#waiterTable').DataTable();
+    console.log('OK');
+} );

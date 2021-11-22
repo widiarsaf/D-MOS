@@ -22,7 +22,8 @@
 </div>
 @endif
 
-<table class="table table-bordered">
+<table class="table table-bordered" id="qrCodeTable">
+	<thead>
 	<tr>
 		<th>No</th>
 		<th>Code Meja</th>
@@ -30,8 +31,10 @@
 		<th>Gambar QR code</th>
 		<th width="280px">Action</th>
 	</tr>
+	</thead>
 	@php $no = 1; @endphp
 	@foreach ($qrcode as $qr)
+	<tbody>
 	<tr>
 		<td>{{$no++}}</td>
 		<td>{{ $qr->code_meja}}</td>
@@ -46,6 +49,7 @@
 			</form>
 		</td>
 	</tr>
+	</tbody>
 	@endforeach
 </table>
 @endsection

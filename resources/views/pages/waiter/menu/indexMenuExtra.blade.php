@@ -22,15 +22,18 @@
 </div>
 @endif
 
-<table class="table table-bordered">
+<table class="table table-bordered" id="myTable">
+	<thead>
 	<tr>
 		<th>No</th>
 		<th>Nama Extra</th>
 		<th>Harga</th>
 		<th width="280px">Action</th>
 	</tr>
+	</thead>
 	@php $no = 1; @endphp
 	@foreach ($extra as $item)
+	<tbody>
 	<tr>
 		<td>{{$no++}}</td>
 		<td>{{ $item->nama_extra }}</td>
@@ -44,6 +47,7 @@
 			</form>
 		</td>
 	</tr>
+	</tbody>
 	@endforeach
 </table>
 @endsection

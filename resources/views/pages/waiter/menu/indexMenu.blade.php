@@ -23,7 +23,8 @@
     </div>
 @endif
 {{-- <button onClick="notif_me()"> tes </button> --}}
-<table class="table table-bordered">
+<table class="table table-bordered" id="menuTable">
+    <thead>
     <tr>
         <th>No</th>
         <th>Nama Masakan</th>
@@ -33,8 +34,10 @@
         <th>Gambar</th>
         <th width="280px">Action</th>
     </tr>
+    </thead>
     @php $no = 1; @endphp
     @foreach ($masakan as $msk)
+    <tbody>
     <tr>
         <td>{{$no++}}</td>
         <td>{{ $msk->nama_masakan }}</td>
@@ -51,6 +54,7 @@
             </form>
         </td>
     </tr>
+    </tbody>
     @endforeach
 </table>
 
