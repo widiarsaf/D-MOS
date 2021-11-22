@@ -20,6 +20,7 @@
 </div>
 @endif
 {{-- <button onClick="notif_me()"> tes </button> --}}
+<a href="{{url('print')}}" class="btn btn-primary">Print Laporan</a>
 <table class="table table-bordered">
 	<tr>
 		<th>No Meja</th>
