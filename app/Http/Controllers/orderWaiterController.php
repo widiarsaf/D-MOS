@@ -84,7 +84,7 @@ class orderWaiterController extends Controller
     }
 
     public function print(){
-        $order = order::all();
+        $order = order::where('status_order','ditutup')->get();
         $order_detail = order_detail::with('masakan')->get();
         $pdf = PDF::loadview('pages.waiter.order.order_pdf',compact('order','order_detail'));
         return $pdf->download('laporan-order-pdf.pdf');
