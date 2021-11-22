@@ -2088,13 +2088,6 @@ a.bg-danger:hover {
 /**  =====================
       Theme-preloader css start
 ==========================  **/
-.theme-loader {
-  height: 100%;
-  width: 100%;
-  background-color: white;
-  position: fixed;
-  z-index: 999999;
-  top: 0; }
 
 .ball-scale {
   left: 50%;

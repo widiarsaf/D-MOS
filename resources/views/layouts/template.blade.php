@@ -37,44 +37,8 @@
 </head>
 
 <body>
-	<!-- Pre-loader start -->
-	<div class="theme-loader">
-		<div class="ball-scale">
-			<div class='contain'>
-				<div class="ring">
-					<div class="frame"></div>
-				</div>
-				<div class="ring">
-					<div class="frame"></div>
-				</div>
-				<div class="ring">
 
-					<div class="frame"></div>
-				</div>
-				<div class="ring">
-					<div class="frame"></div>
-				</div>
-				<div class="ring">
-					<div class="frame"></div>
-				</div>
-				<div class="ring">
-					<div class="frame"></div>
-				</div>
-				<div class="ring">
-					<div class="frame"></div>
-				</div>
-				<div class="ring">
-					<div class="frame"></div>
-				</div>
-				<div class="ring">
-					<div class="frame"></div>
-				</div>
-				<div class="ring">
-					<div class="frame"></div>
-				</div>
-			</div>
-		</div>
-	</div>
+
 	<!-- Pre-loader end -->
 	<div id="pcoded" class="pcoded">
 		<div class="pcoded-overlay-box"></div>
@@ -166,9 +130,6 @@
 									</div>
 									
 								</div>
-
-								<div id="styleSelector">
-
 								</div>
 							</div>
 						</div>
@@ -258,7 +219,7 @@
 	<!-- Custom js -->
 	<script type="text/javascript" src="{{asset('assets/pages/dashboard/custom-dashboard.js')}}"></script>
 	<script type="text/javascript" src="{{asset('assets/js/script.js')}}"></script>
-	<script type="text/javascript " src="{{asset('assets/js/SmoothScroll.js')}}"></script>
+	<!-- <script type="text/javascript " src="{{asset('assets/js/SmoothScroll.js')}}"></script> -->
 	<script src="{{asset('assets/js/pcoded.min.js')}}"></script>
 	<script src="{{asset('assets/js/demo-12.js')}}"></script>
 	<script src="{{asset('assets/js/jquery.mCustomScrollbar.concat.min.js')}}"></script>
