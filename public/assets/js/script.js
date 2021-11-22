@@ -157,3 +157,13 @@ $(document).ready( function () {
     $('#waiterTable').DataTable();
     console.log('OK');
 } );
+
+$(document).ready( function () {
+    $('#openOrderTable').DataTable();
+    console.log('OK');
+} );
+
+$(document).ready( function () {
+    $('#closeOrderTable').DataTable();
+    console.log('OK');
+} );
