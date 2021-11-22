@@ -234,7 +234,7 @@ function showMasakan() {
 	else if(selectMasakan.value==='minuman') {
 		var minumanContainer=document.getElementById('minuman');
 		var makananContainer=document.getElementById('makanan');
-		makananContainer.style.display="none";s
+		makananContainer.style.display="none";
 		minumanContainer.style.display="";
 	}
 }
