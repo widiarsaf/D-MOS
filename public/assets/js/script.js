@@ -90,7 +90,7 @@ $(document).ready(function() {
     $(function() {
         $('[data-toggle="tooltip"]').tooltip();
     });
-    $('.theme-loader').fadeOut('slow',function() {
+    $('.theme-loader').fadeOut('fast',function() {
         $(this).remove();
     });
 });
