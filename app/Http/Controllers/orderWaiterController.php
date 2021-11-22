@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\order;
 use App\Models\order_detail;
+use PDF;
 
 class orderWaiterController extends Controller
 {
@@ -82,6 +83,18 @@ class orderWaiterController extends Controller
         return redirect()->route('orderWaiter.index');
     }
 
+    public function print(){
+        $order = order::all();
+        $order_detail = order_detail::with('masakan')->get();
+        $pdf = PDF::loadview('pages.waiter.order.order_pdf',compact('order','order_detail'));
+        return $pdf->download('laporan-order-pdf.pdf');
+    }
+    public function print2($id){
+        $order = order::all();
+
+        $pdf = PDF::loadview('pages.waiter.order.order_pdf',['order'=>$order]);
+        return $pdf->download('laporan-order-pdf');
+    }
     
     public function destroy($id)
     {
