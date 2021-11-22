@@ -22,14 +22,18 @@
 	</div>
 	@endif
 
-	<table class="table table-bordered" >
+	<table class="table table-bordered" id="menuJenisTable">
+		<thead>
 		<tr>
 			<th>No</th>
 			<th>Nama Jenis</th>
 			<th width="280px">Action</th>
 		</tr>
+		</thead>
+		<tbody>
 		@php $no = 1; @endphp
 		@foreach ($jenisMasakan as $item)
+		
 		<tr>
 			<td>{{$no++}}</td>
 			<td>{{ $item->nama_jenis }}</td>
@@ -42,6 +46,8 @@
 				</form>
 			</td>
 		</tr>
+		
 		@endforeach
+		</tbody>
 	</table>
 @endsection
