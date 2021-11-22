@@ -30,9 +30,10 @@
 			<th width="280px">Action</th>
 		</tr>
 		</thead>
+		<tbody>
 		@php $no = 1; @endphp
 		@foreach ($jenisMasakan as $item)
-		<tbody>
+		
 		<tr>
 			<td>{{$no++}}</td>
 			<td>{{ $item->nama_jenis }}</td>
@@ -45,7 +46,8 @@
 				</form>
 			</td>
 		</tr>
-		</tbody>
+		
 		@endforeach
+		</tbody>
 	</table>
 @endsection

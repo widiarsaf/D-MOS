@@ -32,9 +32,10 @@
 		<th width="280px">Action</th>
 	</tr>
 	</thead>
+	<tbody>
 	@php $no = 1; @endphp
 	@foreach ($qrcode as $qr)
-	<tbody>
+	
 	<tr>
 		<td>{{$no++}}</td>
 		<td>{{ $qr->code_meja}}</td>
@@ -49,7 +50,8 @@
 			</form>
 		</td>
 	</tr>
-	</tbody>
+
 	@endforeach
+	</tbody>
 </table>
 @endsection

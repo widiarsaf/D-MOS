@@ -35,27 +35,29 @@
         <th width="280px">Action</th>
     </tr>
     </thead>
+    <tbody>
     @php $no = 1; @endphp
     @foreach ($masakan as $msk)
-    <tbody>
-    <tr>
-        <td>{{$no++}}</td>
-        <td>{{ $msk->nama_masakan }}</td>
-        <td>{{ $msk->jenis_masakan->nama_jenis}}</td>
-        <td>{{ $msk->harga }}</td>
-        <td>{{ $msk->status }}</td>
-        <th><img width=" 80px" src="{{asset('storage/'.$msk->gambar) }}"></th>
-        <td>
-            <form action="{{ route('masakan.destroy',['masakan'=>$msk->id]) }}" method="POST">
-                <a class="btn btn-primary" href=" {{route('masakan.edit',$msk->id) }}"><i class="ti-marker-alt"></i></a>
-                @csrf
-                @method('DELETE')
-                <button type="submit" class="btn btn-danger"><i class="ti-trash"></i></button>
-            </form>
-        </td>
-    </tr>
-    </tbody>
+    
+        <tr>
+            <td>{{$no++}}</td>
+            <td>{{ $msk->nama_masakan }}</td>
+            <td>{{ $msk->jenis_masakan->nama_jenis}}</td>
+            <td>{{ $msk->harga }}</td>
+            <td>{{ $msk->status }}</td>
+            <th><img width=" 80px" src="{{asset('storage/'.$msk->gambar) }}"></th>
+            <td>
+                <form action="{{ route('masakan.destroy',['masakan'=>$msk->id]) }}" method="POST">
+                    <a class="btn btn-primary" href=" {{route('masakan.edit',$msk->id) }}"><i class="ti-marker-alt"></i></a>
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" class="btn btn-danger"><i class="ti-trash"></i></button>
+                </form>
+            </td>
+        </tr>
+   
     @endforeach
+    </tbody>
 </table>
 
 @endsection
